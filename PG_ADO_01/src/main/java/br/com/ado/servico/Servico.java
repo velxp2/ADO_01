@@ -86,11 +86,8 @@ public class Servico {
         try {
 
             if (nome == null || "".equals(nome)) {
-                listaResposta = DaoProduto.listar();
-            } else {
-                listaResposta = DaoProduto.procurar(nome);
+                 listaResposta = DaoProduto.procurar(nome);
             }
-
         } catch (Exception e) {
 
             e.printStackTrace();

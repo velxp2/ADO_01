@@ -55,7 +55,7 @@ public class DaoProduto {
         }
     }
     
-    public static List<Produto> procurar(String valor)
+    public static List<Produto> procurar(String nome)
             throws SQLException, Exception {
         //Monta a string de consulta de clientes no banco, utilizando
         //o valor passado como parâmetro para busca nas colunas de
@@ -64,7 +64,7 @@ public class DaoProduto {
         //parâmetro). Além disso, também considera apenas os elementos
         //que possuem a coluna de ativação de clientes configurada com
         //o valor correto ("enabled" com "true")
-        String sql = "SELECT * FROM Produto WHERE ((UPPER(nome) LIKE UPPER(?))";
+        String sql = "SELECT * FROM PRODUTOBD = ?";
         //Lista de clientes de resultado
         List<Produto> listaProduto = null;
         //Conexão para abertura e fechamento
@@ -80,7 +80,7 @@ public class DaoProduto {
             //Cria um statement para execução de instruções SQL
             preparedStatement = connection.prepareStatement(sql);
             //Configura os parâmetros do "PreparedStatement"
-            preparedStatement.setString(1, "%" + valor + "%");
+            preparedStatement.setString(1,nome);
             //Executa a consulta SQL no banco de dados
             result = preparedStatement.executeQuery();
 
@@ -195,7 +195,7 @@ public class DaoProduto {
             throws SQLException, Exception {
         //Compõe uma String de consulta que considera apenas o cliente
         //com o ID informado e que esteja ativo ("enabled" com "true")
-        String sql = "SELECT * FROM Produto WHERE (nome=?)";
+        String sql = "SELECT * FROM PRODUTOBD.PRODUTO WHERE PRODUTO.NOME =?";
 
         //Conexão para abertura e fechamento
         Connection connection = null;

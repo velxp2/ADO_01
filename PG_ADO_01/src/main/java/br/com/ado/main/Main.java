@@ -62,6 +62,15 @@ public class Main {
                     }
 
                     break;
+                case 3:
+                    System.out.print("Digite o nome do produto: ");
+                    nome = sc.nextLine();
+                    Produto p = Servico.obterProduto(nome);
+                    System.out.println("Nome: "+p.getNome()+ "\nDescricao: "+ p.getDescricao()+"\n"+"Categoria: "+ p.getCategoria()+"\n"+ 
+                            "Preco de Compra: "+p.getPreco_compra()+"\n"+"Preco de Venda: "+ p.getPreco_venda()+"\n"+"Quantidade: "+p.getQuantidade());
+                    
+                    break;
+            
             }
 
         } while (menu != 0);
