@@ -17,6 +17,7 @@ import java.util.List;
 /**
  *
  * @author victo
+ * @author rafaeldini
  */
 public class DaoProduto {
     

@@ -13,6 +13,7 @@ import br.com.ado.model.produto.Produto;
  *
  * @author victo
  * @author raffael.wmoraes
+ * @author rafaeldini
  */
 public class Main {
 
