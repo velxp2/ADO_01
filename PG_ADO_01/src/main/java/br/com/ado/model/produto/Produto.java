@@ -72,6 +72,10 @@ public class Produto {
     public void setCategoria(String Categoria) {
         this.Categoria = Categoria;
     }
+
+    public void setNome() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

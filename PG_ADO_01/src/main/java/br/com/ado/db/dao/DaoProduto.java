@@ -177,7 +177,6 @@ public class DaoProduto {
             preparedStatement = connection.prepareStatement(sql);
             //Configura os parâmetros do "PreparedStatement"
             preparedStatement.setString(1, nome);
-
             //Executa o comando no banco de dados
             preparedStatement.execute();
         } finally {

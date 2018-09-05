@@ -5,6 +5,7 @@
  */
 package br.com.ado.main;
 
+import br.com.ado.db.dao.DaoProduto;
 import java.util.Scanner;
 import br.com.ado.servico.Servico;
 import br.com.ado.model.produto.Produto;
@@ -19,6 +20,7 @@ public class Main {
 
     public static void main(String[] args) {
         Produto produto = new Produto();
+        
         int menu = 0;
         Scanner sc = new Scanner(System.in);
 
@@ -70,6 +72,14 @@ public class Main {
                     System.out.println("Nome: "+p.getNome()+ "\nDescricao: "+ p.getDescricao()+"\n"+"Categoria: "+ p.getCategoria()+"\n"+ 
                             "Preco de Compra: "+p.getPreco_compra()+"\n"+"Preco de Venda: "+ p.getPreco_venda()+"\n"+"Quantidade: "+p.getQuantidade());
                     
+                    break;
+                case 4:
+                    System.out.print("Digite o nome do produto: ");
+                    nome = sc.nextLine();
+                    Servico.excluirProduto(nome);
+                    if(Servico.obterProduto(nome)== null){
+                        System.out.println("Produto removido com sucesso!");
+                    }
                     break;
             
             }
