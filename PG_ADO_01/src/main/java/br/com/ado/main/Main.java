@@ -80,6 +80,7 @@ public class Main {
                     if(Servico.obterProduto(nome)== null){
                         System.out.println("Produto removido com sucesso!");
                     }
+                    
                     break;
             
             }
