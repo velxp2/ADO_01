@@ -57,14 +57,46 @@ public class Main {
                     String quantidade = sc.nextLine();
                     produto.setQuantidade(Integer.parseInt(quantidade));
 
-                    /* System.out.print("Selecione a categoria do Produto(" + produto.getNome() + ") :");
-                    * pegar Categorias do Banco de Dados
-                    */
+                
                     if (Servico.cadastrarProduto(produto) == null) {
                         System.out.println(produto.getNome() + " inserido com sucesso!\n");
                     }
 
                     break;
+                     case 2:
+                    System.out.print("Digite o nome do produto: ");
+                    nome = sc.nextLine();
+
+                    if (Servico.procurarProduto(nome) == null) {
+                        System.out.println("Produto não existe na lista!!!!");
+                    } else {
+
+                        produto = Servico.obterProduto(nome);
+
+                        System.out.print("Digite o novo nome do Produto: ");
+                        nome = sc.nextLine();
+                        produto.setNome(nome);
+
+                        System.out.print("Digite a nova descrição do Produto: ");
+                        descricao = sc.nextLine();
+                        produto.setDescricao(descricao);
+
+                        System.out.print("Digite o novo preço de compra: ");
+                        precoCompra = sc.nextLine();
+                        produto.setPreco_compra(Float.parseFloat(precoCompra));
+
+                        System.out.print("Digite o novo preço de venda: ");
+                        precoVenda = sc.nextLine();
+                        produto.setPreco_venda(Float.parseFloat(precoVenda));
+
+                        System.out.print("Digite a nova quantidade do produto: ");
+                        quantidade = sc.nextLine();
+                        produto.setQuantidade(Integer.parseInt(quantidade));
+
+                        Servico.atualizarProduto(produto);
+                    }
+                    break;
+                    
                 case 3:
                     System.out.print("Digite o nome do produto: ");
                     nome = sc.nextLine();
